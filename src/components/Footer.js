@@ -7,7 +7,7 @@ const Footer = () => {
          <Wrapper>
 
               <h5>
-                  &copy; 
+                  &copy; {new Date().getFullYear()}
 
                   <span>
                       ArtShop

@@ -52,16 +52,12 @@ function App(){
                  <Checkout />
               </Route>
 
-           <Route path="*">
-
+           <Route exact path="*">
                <Error />
-
            </Route>
 
           </Switch>
-
           <Footer />
-
        </Router>
 
     )
