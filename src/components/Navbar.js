@@ -1,13 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo-fi.png';
+import { Link } from 'react-router-dom'; //named importation
+import { FaBars } from "react-icons/fa";
+import {links} from '../utils/constants';
 
-const Nav = () => {
+const Navbar = () => {
 
     
-        return();
+        return(
+            <NavContainer>
+                 
+                 <div className="nav-center">
+                     <div className="nav-header">
 
+                          <Link to="/">
+                          <img  src={logo} alt="Artshop" />
+                          </Link>
+                          
 
+                          {/* button represent responsive menu */}
+                          <button type="button" className="nav-toggle">
+                                 <FaBars />
+                          </button>
+                     </div>
+                   
+                   <ul className="nav-links">
+
+                       {
+
+                             links.map((element) => {
+                                  
+                                  const {id,text,url} = element;
+
+                                  return(
+
+                                        <li key={id}>
+
+                                            <Link to={url}>
+                                              {text}
+                                            </Link>
+                                        </li>
+                                  );
+
+                             })
+                        
+                       }
+                   </ul>
+
+                 </div>
+
+            </NavContainer>
+        );
 }
 
 
@@ -80,6 +124,7 @@ justify-content: center;
     display: grid;
   }
 }
-   
-
 `;
+
+
+export default Navbar;
